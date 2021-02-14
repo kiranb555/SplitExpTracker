@@ -9,6 +9,8 @@ import "./App.scss";
 const About = React.lazy(() => import("./pages/about"));
 const Contact = React.lazy(() => import("./pages/contact"));
 const NotFound = React.lazy(() => import("./pages/notFound"));
+const Posts = React.lazy(() => import("./pages/posts"));
+const Post = React.lazy(() => import("./pages/post"));
 
 function App() {
   return (

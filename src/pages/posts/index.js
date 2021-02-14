@@ -1,3 +1,3 @@
-import Post from "./Posts.jsx";
+import Posts from "./Posts.jsx";
 
-export default PostMessageOptions;
+export default Posts;
