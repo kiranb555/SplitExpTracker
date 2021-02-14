@@ -4,19 +4,28 @@ import "./Header.style.scss";
 
 const Header = () => {
   return (
-    <div className="headeer">
+    <div className="header">
       <Navbar color="dark" dark>
-        <NavbarBrand href="/"> App name </NavbarBrand>
+        <NavbarBrand href="/" className="text-light text-weight-bold">
+          {" "}
+          App name{" "}
+        </NavbarBrand>
 
         <Nav>
           <NavItem>
-            <NavLink href="/">Home</NavLink>
+            <NavLink href="/" className="text-light">
+              Home
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/about">About</NavLink>
+            <NavLink href="/about" className="text-light">
+              About
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/contact" className="text-light">
+              Contact
+            </NavLink>
           </NavItem>
         </Nav>
       </Navbar>
