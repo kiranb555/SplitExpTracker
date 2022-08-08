@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       &copy; &nbsp;
       <a href="https://github.com/kiranb555" target="_blank" rel="noreferrer">
-        Kiran 2021
+        Developed by Kiran b
       </a>
     </div>
   );

@@ -1,4 +1,7 @@
 import React, { Suspense } from "react";
+import { Provider } from "react-redux";
+import { PersistGate } from 'redux-persist/integration/react'
+import store,{persistor} from "./redux/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Spinner } from "reactstrap";
 import Home from "./pages/home";
@@ -14,28 +17,32 @@ const Post = React.lazy(() => import("./pages/post"));
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Router>
-        <Suspense
-          fallback={
-            <div className="App__spinner">
-              <Spinner color="dark" size="sm" />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <div className="App">
+          <Header />
+          <Router>
+            <Suspense
+              fallback={
+                <div className="App__spinner">
+                  <Spinner color="dark" size="sm" />
+                </div>
+              }
+            >
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/posts" component={Posts}></Route>
+                <Route exact path={`/posts/:ID`} component={Post}></Route>
+                <Route component={NotFound} />
+              </Switch>
+            </Suspense>
+          </Router>
+          <Footer />
             </div>
-          }
-        >
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/posts" component={Posts}></Route>
-            <Route exact path={`/posts/:ID`} component={Post}></Route>
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
-      </Router>
-      <Footer />
-    </div>
+        </PersistGate>
+      </Provider>
   );
 }
 
