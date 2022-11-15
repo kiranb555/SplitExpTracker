@@ -1,0 +1,11 @@
+@import "../../scss/theme.scss";
+
+.footer {
+  height: 100px;
+  color: $text;
+  background-color: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
