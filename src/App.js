@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Provider } from "react-redux";
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from "redux-persist/integration/react"
 import store,{persistor} from "./redux/store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Spinner } from "reactstrap";
@@ -9,11 +9,8 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import "./App.scss";
 
-const About = React.lazy(() => import("./pages/about"));
-const Contact = React.lazy(() => import("./pages/contact"));
 const NotFound = React.lazy(() => import("./pages/notFound"));
-const Posts = React.lazy(() => import("./pages/posts"));
-const Post = React.lazy(() => import("./pages/post"));
+const ExpensesDetailsPage = React.lazy(() => import("./components/expensesDetailsPage/ExpensesDetailsPage.jsx"));
 
 function App() {
   return (
@@ -30,19 +27,16 @@ function App() {
               }
             >
               <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Route exact path="/posts" component={Posts}></Route>
-                <Route exact path={`/posts/:ID`} component={Post}></Route>
+                <Route exact path="/" component={Home} /> 
+                <Route exact path={"/expenses/:ID"} component={ExpensesDetailsPage}></Route> 
                 <Route component={NotFound} />
               </Switch>
             </Suspense>
           </Router>
           <Footer />
-            </div>
-        </PersistGate>
-      </Provider>
+        </div>
+      </PersistGate>
+    </Provider>
   );
 }
 

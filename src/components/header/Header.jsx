@@ -7,24 +7,13 @@ const Header = () => {
     <div className="header">
       <Navbar color="dark" dark>
         <NavbarBrand href="/" className="text-light text-weight-bold">
-          {" "}
-          App name{" "}
+          Jaunt Yield 
         </NavbarBrand>
 
         <Nav>
           <NavItem>
             <NavLink href="/" className="text-light">
               Home
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/about" className="text-light">
-              About
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/contact" className="text-light">
-              Contact
             </NavLink>
           </NavItem>
         </Nav>

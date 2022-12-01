@@ -1,27 +1,27 @@
 import { takeEvery, put } from "redux-saga/effects";
-import { getData, loader, setData } from "../actions/getData";
+import { getData, loader, setData } from "../actions/actions";
 
-export function* watchGetInitialData(action) {
+export function* watchGetInitialData() {
   try {
     yield put(loader(true));
     // const response = yield call(
     //   getPortfolioAllData,
     //   "/portfolio?secret=kiranPortfolio"
     // );
-      const response = [
-          {
-          name: 'ather',
-          age: 22
-            },
-          {
-              name: "brad",
-              age : 35
-          },
-          {
-              name: "charlie",
-              age : 28
-          }
-      ];
+    const response = [
+      {
+        name: "ather",
+        age: 22
+      },
+      {
+        name: "brad",
+        age : 35
+      },
+      {
+        name: "charlie",
+        age : 28
+      }
+    ];
     yield put(setData(response));
   } catch (error) {
     yield put(setData([]));

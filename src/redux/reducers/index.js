@@ -1,12 +1,12 @@
-import { combineReducers } from 'redux';
-import getDataReducer from './getDataReducer';
+import { combineReducers } from "redux";
+import mainReducer from "./mainReducer";
 
 const staticReducers = {
-    root: getDataReducer,
+  root: mainReducer,
 };
 
 const rootReducer = combineReducers({
-    ...staticReducers
+  ...staticReducers
 });
 
 export default rootReducer;

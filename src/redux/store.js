@@ -1,16 +1,17 @@
 import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
-import createSagaMiddleware from 'redux-saga'
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import createSagaMiddleware from "redux-saga"
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import rootReducer from "./reducers/index";
-import rootSaga from './sagas/index';
+import rootSaga from "./sagas/index";
 
 
 const persistConfig = {
-  key: 'root-data',
+  key: "root-data",
   storage,
+  whiteList: ["expensesList"]
 }
 
 
