@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-# jaunt-yield
-Smart way to split your travel expenses
+
+# Expense Tracker
+Smart way to track your expense and split your travel expenses
 =======
 # Getting Started with Create React App
 
